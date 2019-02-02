@@ -1,0 +1,176 @@
+<html>
+    <head>
+            <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <!-- Compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+            <title>Project2</title>
+        <style>
+          #navtop{
+background-color: #000000;
+background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+          }
+        #navbot{
+
+            background-color: black;
+        }
+          #droupdown1{
+            
+          }
+        #fa{
+            padding: 0;
+              font: 400 100px/1.3 'Oleo Script', Helvetica, sans-serif;
+  color: #2b2b2b;
+  text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+    text-shadow: 2px 2px gray;
+
+)
+        }
+        body{
+
+    background: #CB356B;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #BD3F32, #CB356B);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #BD3F32, #CB356B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+      
+        </style>    
+        <script>
+        $( document ).ready(function() {    
+     $('.dropdown-trigger').dropdown({
+          inDuration: 300,
+          outDuration: 225,
+          constrain_width: true, // Does not change width of dropdown to that of the activator
+          hover: true, // Activate on hover
+          gutter: 20, // Spacing from edge
+          belowOrigin: true, // Displays dropdown below the button
+          alignment: 'left' // Displays dropdown with edge aligned to the left of button
+        }
+      );
+      $('.carousel').carousel(
+  {
+    dist: 0,
+    padding: 0,
+    fullWidth: true,
+    indicators: true,
+    duration: 100,
+  }
+  );
+autoplay()   
+function autoplay() {
+    $('.carousel').carousel('next');
+    setTimeout(autoplay, 4500);
+}
+    $('#modal').modal();
+    $('#modal').modal('open');
+});
+</script>
+        </head>
+    
+    <body>
+    <ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">Your cart</a></li>
+  <li><a href="#!">Merchandise</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">three</a></li>
+</ul>
+   <ul id="dropdown2" class="dropdown-content">
+  <li><a href="#!">Your cart</a></li>
+  <li><a href="#!">Merchandise</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">three</a></li>
+</ul>
+   <ul id="dropdown3" class="dropdown-content">
+  <li><a href="#!">Indie</a></li>
+  <li><a href="#!">Metal</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">Pop</a></li>
+</ul>
+
+    <nav>
+    <nav>
+    <div class="nav-wrapper" id = "navtop">
+    <div id = "fa">
+      <a href="#" class="brand-logo center">PROJECT 2</a>
+      </div>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+      </ul>
+    </div>
+  <div class="nav-wrapper" id = "navbot">
+    <a href="#!" class="brand-logo"></a>
+    <ul class="center hide-on-med-and-down">
+
+ <li><a class="dropdown-trigger" href="#!" data-target="dropdown3">Artists<i class="material-icons right"></i></a></li>
+  <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Events<i class="material-icons right"></i></a></li>      <!-- Dropdown Trigger -->
+      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Shopping<i class="material-icons right"></i></a></li>
+    </ul>
+  </div>
+</nav>
+<section class="black">
+  <div class="carousel carousel-slider" data-indicators="true">
+    <div class="carousel-fixed-item">
+      <div class="container">
+        <h1 class="white-text">Materialize Carousel</h1>
+        <a class="btn waves-effect white grey-text darken-text-2" href="https://codepen.io/collection/nbBqgY/" target="_blank">button</a>
+      </div>
+    </div>
+    <div class="carousel-item red lighten-2 white-text" href="#one!">
+      <div class="container">
+        <h2>First Slide</h2>
+        <p class="white-text">Etiam porta sem malesuada magna mollis euismod.</p>
+      </div>  
+    </div>
+    <div class="carousel-item amber darken-2 white-text" href="#two!">
+      <div class="container">
+        <h2>Second Slide</h2>
+        <p class="white-text">Etiam porta sem malesuada magna mollis euismod.</p>
+      </div>  
+    </div>
+    <div class="carousel-item green white-text" href="#three!">
+      <div class="container">
+        <h2>Third Slide</h2>
+        <p class="white-text">Etiam porta sem malesuada magna mollis euismod.</p>
+      </div>  
+    </div>
+    <div class="carousel-item blue white-text" href="#four!">
+      <div class="container">
+        <h2>Fourth Slide</h2>
+        <p class="white-text">Etiam porta sem malesuada magna mollis euismod.</p>
+      </div>  
+    </div>
+  </div>
+</section>
+<div class = "featured">
+<div class = "container">
+ <div class="row">
+      <div class="col s12">Featured</div>
+      <div class="col s4"><img src = "placeholder.jpg"></div>
+      <div class="col s4"><img src = "placeholder.jpg"></div>
+      <div class="col s4"><img src = "placeholder.jpg"></div>
+  
+    </div>
+    <div class = "row">
+        <div class="col s4"><img src = "placeholder.jpg"></div>
+      <div class="col s4"><img src = "placeholder.jpg"></div>
+      <div class="col s4"><img src = "placeholder.jpg"></div>
+      </div>
+        </div>  
+</div>
+<div id="modal" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div>
+
+          
+    </body>
+
+    </html>
