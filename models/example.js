@@ -105,3 +105,5 @@ module.exports = function(sequelize, DataTypes) {
     },
   });
 };
+
+artistdb.sync();
