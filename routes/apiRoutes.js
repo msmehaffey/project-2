@@ -2,9 +2,15 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  app.get("/artists", function(req, res) {
+    db.Example.findAll({}).then(function(artists) {
+      res.json(artists);
+    });
+  });
+
+  app.get("/merch", function(req, res) {
+    db.Example.findAll({}).then(function(merch) {
+      res.json(merch);
     });
   });
 
