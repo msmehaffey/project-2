@@ -8,7 +8,11 @@ module.exports = (sequelize, DataTypes) => {
     Email: DataTypes.STRING
   }, {});
   Artist.associate = function(models) {
-    // associations can be defined here
+
+    Artist.hasMany(models.Designs, {
+      onDelete: "cascade"
+    });
+    
   };
   return Artist;
 };
