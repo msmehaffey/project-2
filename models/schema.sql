@@ -40,7 +40,6 @@ CREATE TABLE `artistDesigns` (
     id INT NOT NULL AUTO_INCREMENT,
     designs VARCHAR(120) NOT NULL,
     designURL VARCHAR(150) NOT NULL,
-    artist VARCHAR(100) NOT NULL,
     timecreated DATETIME NOT NULL,
     PRIMARY KEY (id)
 );
