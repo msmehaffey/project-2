@@ -1,8 +1,9 @@
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
-  const Artist = sequelize.define('Artist', {
+  const Show = sequelize.define('Show', {
 
-    Artist: {
+    Venue: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -10,31 +11,31 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
 
-    Genre: {
-      type: DataTypes.STRING,
+    Date: {
+        type: DataTypes.DATE
+    },
+
+    Price: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
 
-    Website: {
+    Facebook: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-
-    Logo: {
-      type: DataTypes.STRING,
-    }
-
   });
 
-  Artist.associate = function(models) {
-
-    Artist.hasMany(models.Show, {
-      onDelete: "cascade"
+  Show.associate = function(models) {
+    Show.belongsTo(models.Artist, {
+      foreignKey: {
+        allowNull: false
+      }
     });
-    
   };
-  return Artist;
+  
+  return Show;
 };
