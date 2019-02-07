@@ -1,6 +1,6 @@
 var Sequelize = require("sequelize");
 
-var sequelize = new Sequelize("artistdb", "root", "", {
+var sequelize = new Sequelize("artistdb", "root", "root", {
     host: "localhost",
     dialect: "mysql",
     pool: {
