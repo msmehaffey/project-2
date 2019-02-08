@@ -18,9 +18,9 @@ module.exports = function(app) {
   });
 
   // cms route loads cms.html
-  // app.get("/cms", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/cms.html"));
-  // });
+  app.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname, "../login.html"));
+  });
 
   // // blog route loads blog.html
   // app.get("/blog", function(req, res) {
