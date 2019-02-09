@@ -29,6 +29,21 @@
         M.AutoInit();
       });
 
+  $(function() {
+  $(".carousel-item").on("click", function(event) {
+    var id = $(this).data("id");
+
+    // Send the  request.
+    $.ajax("/artistsearch" + id, {
+      type: "GET",
+    }).then(
+      function() {
+        console.log("test");
+        // Reload the page to get the updated list
+      })
+  });
+  });
+
   </script>
   <title> my test </title>
 

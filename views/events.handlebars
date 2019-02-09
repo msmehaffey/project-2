@@ -1,76 +1,31 @@
 <nav>
-  <div class="container">
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Local Clutch</a>
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Local Clutch</a>
+    
+          <ul class="right hide-on-med-and-down">
+            <li><a class="modal-trigger" href="index.html"><i class="material-icons right">home</i> Home </a></li>
+          </ul>
+        </div>
+      </div>
+         
+    </nav>
+    <div class="container">
+    <table class="responsive-table striped center-align">
+        <thead>
+          <tr>
+              <th> Venue </th>
+              <th> Date </th>
+              <th> Price </th>
+          </tr>
+        </thead>
 
-      <ul class="right hide-on-med-and-down">
-        <li><a class="modal-trigger" href="index.html"><i class="material-icons right">home</i> Home </a></li>
-      </ul>
-    </div>
-  </div>
-
-</nav>
-<div class="container">
-
-  <div>
-    {{#each event}}
-    <p> {{this.Venue}}</p>
-    {{/each}}
-  </div>
-  <table class="responsive-table striped center-align">
-    <thead>
-      <tr>
-        <th> Band Name</th>
-        <th> Venue </th>
-        <th> Date </th>
-        <th> Time </th>
-        <th> Tickets Available </th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td> Test </td>
-        <td>Eclair</td>
-        <td>$0.87</td>
-        <td> 7 </td>
-        <td>40 <button> Purchase Tickets </button></td>
-      </tr>
-      <tr>
-        <td>Alan</td>
-        <td>Jellybean</td>
-        <td>$3.76</td>
-        <td> 7 </td>
-        <td>40 <button> Purchase Tickets </button></td>
-      </tr>
-      <tr>
-        <td>Jonathan</td>
-        <td>Lollipop</td>
-        <td>$7.00</td>
-        <td> 7 </td>
-        <td>40 <button> Purchase Tickets </button></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<ul id="nav-mobile" class="left hide-on-med-and-down">
-</ul>
-</div>
-<div class="nav-wrapper" id="navbot">
-  <a href="#!" class="brand-logo"></a>
-  <ul class="center hide-on-med-and-down">
-
-    <a class="waves-effect waves-light btn-large"><i class="material-icons left"></i>T-Shirts</a>
-    <a class="waves-effect waves-light btn-large"><i class="material-icons right"></i>Events</a>
-
-
-  </ul>
-</div>
-
-
-
-
-</nav>
-
-</nav>
-</body>
+        <tbody>
+          <tr>
+            {{#each show}}
+              {{band/band-shows}}
+            {{/each}}
+          </tr>
+        </tbody>
+      </table>
+      </div>
