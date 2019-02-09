@@ -11,14 +11,6 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
 
-    bandName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: { 
-        len: [1]
-      }
-    },
-
     Date: {
         type: DataTypes.DATE
     },

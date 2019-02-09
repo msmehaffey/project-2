@@ -4,22 +4,17 @@ module.exports = function(app) {
   // Get all examples
 
   // Artists API calls
-  // app.get("/api/artists", function(req, res) {
-  //   db.Artist.findAll({}).then(function(results) {
-  //     console.log(results)
-  //     res.json(results);
-  //   });
-  // });
-
   app.get("/", function(req, res) {
-    db.Artist.findAll({}).then(function(data) {
+    db.Artist.findAll({}).then(function(results) {
       var hbsObject = {
-        band: data
+        band: results
       };
-      console.log(hbsObject);
-      res.render("index", hbsObject);
+      console.log(results)
+      res.render("index", hbsObject)
     });
   });
+
+  
 
   app.post("/api/newArtist", function(req, res) {
     db.Artist.create({
@@ -60,15 +55,19 @@ module.exports = function(app) {
 
 
 // Events API calls
-app.get("/api/events", function(req, res) {
+app.get("/events", function(req, res) {
   db.Show.findAll({}).then(function(results) {
-    res.json(results)
+    var hbsObject = {
+      event: results
+    };
+    console.log(results)
+    res.render("events", hbsObject)
   });
 });
 
 app.post("/api/newEvent", function(req, res) {
   db.Show.create({
-    Venue: "Star Bar",
+    Venue: "Hopdoddys",
     Date: "12/27/2019",
     Price: "15",
     Facebook: "www.facebook.com/event",

@@ -1,48 +1,73 @@
-<body>
-    <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">Your cart</a></li>
-  <li><a href="#!">Merchandise</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
-</ul>
-   <ul id="dropdown2" class="dropdown-content">
-  <li><a href="#!">Your cart</a></li>
-  <li><a href="#!">Merchandise</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
-</ul>
-   <ul id="dropdown3" class="dropdown-content">
-  <li><a href="#!">Indie</a></li>
-  <li><a href="#!">Metal</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">Pop</a></li>
-</ul>
+<nav>
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Local Clutch</a>
 
-    <nav>
-    <nav>
-    <div class="nav-wrapper" id = "navtop">
-    <div id = "fa">
-      <a href="#" class="brand-logo center">Austin Local Clutch </a>
-      </div>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <ul class="right hide-on-med-and-down">
+        <li><a class="modal-trigger" href="index.html"><i class="material-icons right">home</i> Home </a></li>
       </ul>
     </div>
-  <div class="nav-wrapper" id = "navbot">
-    <a href="#!" class="brand-logo"></a>
-    <ul class="center hide-on-med-and-down">
+  </div>
 
-        <a class="waves-effect waves-light btn-large"><i class="material-icons left"></i>T-Shirts</a>
-        <a class="waves-effect waves-light btn-large"><i class="material-icons right"></i>Events</a>
+</nav>
+<div class="container">
+
+  <div>
+    {{#each event}}
+    <p> {{this.Venue}}</p>
+    {{/each}}
+  </div>
+  <table class="responsive-table striped center-align">
+    <thead>
+      <tr>
+        <th> Band Name</th>
+        <th> Venue </th>
+        <th> Date </th>
+        <th> Time </th>
+        <th> Tickets Available </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td> Test </td>
+        <td>Eclair</td>
+        <td>$0.87</td>
+        <td> 7 </td>
+        <td>40 <button> Purchase Tickets </button></td>
+      </tr>
+      <tr>
+        <td>Alan</td>
+        <td>Jellybean</td>
+        <td>$3.76</td>
+        <td> 7 </td>
+        <td>40 <button> Purchase Tickets </button></td>
+      </tr>
+      <tr>
+        <td>Jonathan</td>
+        <td>Lollipop</td>
+        <td>$7.00</td>
+        <td> 7 </td>
+        <td>40 <button> Purchase Tickets </button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ul id="nav-mobile" class="left hide-on-med-and-down">
+</ul>
+</div>
+<div class="nav-wrapper" id="navbot">
+  <a href="#!" class="brand-logo"></a>
+  <ul class="center hide-on-med-and-down">
+
+    <a class="waves-effect waves-light btn-large"><i class="material-icons left"></i>T-Shirts</a>
+    <a class="waves-effect waves-light btn-large"><i class="material-icons right"></i>Events</a>
 
 
   </ul>
-  </div>
-
-<div>
-    {{#each Events}}
-        <p> {{this.Artist }}</p>
-    {{/each}}
 </div>
+
+
 
 
 </nav>
