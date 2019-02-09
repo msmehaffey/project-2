@@ -12,9 +12,9 @@ module.exports = function(app) {
 
   app.post("/api/newArtist", function(req, res) {
     db.Artist.create({
-      Artist: "Black Sabbath",
-      Genre: "Metal",
-      Website: "www.blacksabbath.com",
+      Artist: "Red hot chili peppers",
+      Genre: "rock",
+      Website: "www.redhotchilipeppers.com",
       Logo: "url.jpeg"
     }).then(function(results) {
       res.json(results)
@@ -40,7 +40,7 @@ module.exports = function(app) {
   app.post("/api/deleteArtist", function(req, res) {
     db.Artist.destroy({
       where: {
-        id: 1
+        id: 3
       }
     }).then(function(results) {
       res.redirect("/api/events")
@@ -85,7 +85,7 @@ app.post("/api/updateEvent", function(req, res) {
 app.post("/api/deleteEvent", function(req, res) {
   db.Show.destroy({
     where: {
-      id: 3
+      id: 2
     }
   }).then(function(results) {
     res.redirect("/api/events")
