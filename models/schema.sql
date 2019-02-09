@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS artistdb;
+-- DROP DATABASE IF EXISTS artistdb;
 
-CREATE DATABASE artistdb;
+-- CREATE DATABASE artistdb;
 

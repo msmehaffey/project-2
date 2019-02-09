@@ -1,11 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "root",
     "database": "artistdb",
     "host": "localhost",
-    "dialect": "mysql",
-    "port": 8889
+    "dialect": "mysql"
+
   },
   "test": {
     "username": "root",
