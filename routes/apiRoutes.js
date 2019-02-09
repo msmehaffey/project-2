@@ -4,11 +4,17 @@ module.exports = function(app) {
   // Get all examples
 
   // Artists API calls
-  app.get("/api/artists", function(req, res) {
+  app.get("/", function(req, res) {
     db.Artist.findAll({}).then(function(results) {
-      res.json(results);
+      var hbsObject = {
+        band: results
+      };
+      console.log(results)
+      res.render("index", hbsObject)
     });
   });
+
+  app.get("artist/")
 
   app.post("/api/newArtist", function(req, res) {
     db.Artist.create({
