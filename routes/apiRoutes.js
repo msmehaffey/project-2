@@ -14,7 +14,19 @@ module.exports = function(app) {
     });
   });
 
-  app.get("artist/")
+  app.get("/artistsearch:id", function(req, res) {
+    db.Shows.findAll({
+      where: {
+        ArtistId: req.params.id
+      }
+    }).then(function(results) {
+      var showsObject = {
+        show: results
+      }
+      console.log(results)
+      res.render("events", showsObject)
+    })
+  });
 
   app.post("/api/newArtist", function(req, res) {
     db.Artist.create({

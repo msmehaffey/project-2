@@ -14,35 +14,17 @@
     <table class="responsive-table striped center-align">
         <thead>
           <tr>
-              <th> Band Name</th>
               <th> Venue </th>
               <th> Date </th>
-              <th> Time </th>
-              <th> Tickets Available </th>
+              <th> Price </th>
           </tr>
         </thead>
 
         <tbody>
           <tr>
-            <td> Test </td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-            <td> 7 </td>
-            <td>40 <button> Purchase Tickets </button></td>
-          </tr>
-          <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-            <td> 7 </td>
-            <td>40 <button> Purchase Tickets </button></td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-            <td> 7 </td>
-            <td>40 <button> Purchase Tickets </button></td>
+            {{#each show}}
+              {{band/band-shows}}
+            {{/each}}
           </tr>
         </tbody>
       </table>
