@@ -1,88 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="public/styles/indexStyle.css"> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- <script src="public/js/home.js"></script> -->
-  <title>Local Clutch</title>
-</head>
-<body style="background-color:#eeeeee">
 
-  <style> 
-      nav {
-          background-color: #212121
-      }
-      .carousel-item img {
-        height: 200px;
-        width: 200px;
-      }
-      #modalDate {
-        height: 100px;
-      }
-  </style>
-  <script> 
-      $(document).ready(function() {
-        M.AutoInit();
-      });
 
-  </script>
+  <body>
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">Your cart</a></li>
+      <li><a href="#!">Merchandise</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+    </ul>
+    <ul id="dropdown2" class="dropdown-content">
+      <li><a href="#!">Your cart</a></li>
+      <li><a href="#!">Merchandise</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+    </ul>
+    <ul id="dropdown3" class="dropdown-content">
+      <li><a href="#!">Indie</a></li>
+      <li><a href="#!">Metal</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">Pop</a></li>
+    </ul>
+
     <nav>
-      <div class="container">
-        <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">Local Clutch</a>
-    
-          <ul class="right hide-on-med-and-down">
-            <li><a class="modal-trigger" href="index.html"><i class="material-icons right">home</i> Home </a></li>
+      <nav>
+        <div class="nav-wrapper" id="navtop">
+          <div id="fa">
+            <a href="#" class="brand-logo center">Austin Local Clutch </a>
+          </div>
+          <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
+        </div>
+        <div class="nav-wrapper" id="navbot">
+          <a href="#!" class="brand-logo"></a>
+          <ul class="center hide-on-med-and-down">
+            <a class="waves-effect waves-light btn-large"
+              ><i class="material-icons left"></i>T-Shirts</a
+            >
+            <a class="waves-effect waves-light btn-large"
+              ><i class="material-icons right"></i>Events</a
+            >
           </ul>
         </div>
-      </div>
-         
+      </nav>
     </nav>
-    <div class="container">
-    <table class="responsive-table striped center-align">
-        <thead>
-          <tr>
-              <th> Band Name</th>
-              <th> Venue </th>
-              <th> Date </th>
-              <th> Time </th>
-              <th> Tickets Available </th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td> Test </td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-            <td> 7 </td>
-            <td>40 <button> Purchase Tickets </button></td>
-          </tr>
-          <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-            <td> 7 </td>
-            <td>40 <button> Purchase Tickets </button></td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-            <td> 7 </td>
-            <td>40 <button> Purchase Tickets </button></td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
-
-</body>
-
-</html>
+  </body>
 

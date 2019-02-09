@@ -14,13 +14,13 @@ module.exports = function(app) {
     });
   });
 
-  app.get("artist/")
+  
 
   app.post("/api/newArtist", function(req, res) {
     db.Artist.create({
-      Artist: "Red hot chili peppers",
+      Artist: "Black Sabbath",
       Genre: "rock",
-      Website: "www.redhotchilipeppers.com",
+      Website: "www.blacksabbath.com",
       Logo: "url.jpeg"
     }).then(function(results) {
       res.json(results)
@@ -55,15 +55,19 @@ module.exports = function(app) {
 
 
 // Events API calls
-app.get("/api/events", function(req, res) {
+app.get("/events", function(req, res) {
   db.Show.findAll({}).then(function(results) {
-    res.json(results)
+    var hbsObject = {
+      event: results
+    };
+    console.log(results)
+    res.render("events", hbsObject)
   });
 });
 
 app.post("/api/newEvent", function(req, res) {
   db.Show.create({
-    Venue: "Star Bar",
+    Venue: "Hopdoddys",
     Date: "12/27/2019",
     Price: "15",
     Facebook: "www.facebook.com/event",
