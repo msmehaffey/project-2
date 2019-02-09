@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
 
-    Artist: {
+    bandName: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: { 

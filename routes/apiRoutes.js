@@ -4,17 +4,28 @@ module.exports = function(app) {
   // Get all examples
 
   // Artists API calls
-  app.get("/api/artists", function(req, res) {
-    db.Artist.findAll({}).then(function(results) {
-      res.json(results);
+  // app.get("/api/artists", function(req, res) {
+  //   db.Artist.findAll({}).then(function(results) {
+  //     console.log(results)
+  //     res.json(results);
+  //   });
+  // });
+
+  app.get("/", function(req, res) {
+    db.Artist.findAll({}).then(function(data) {
+      var hbsObject = {
+        band: data
+      };
+      console.log(hbsObject);
+      res.render("index", hbsObject);
     });
   });
 
   app.post("/api/newArtist", function(req, res) {
     db.Artist.create({
-      Artist: "Red hot chili peppers",
+      Artist: "Black Sabbath",
       Genre: "rock",
-      Website: "www.redhotchilipeppers.com",
+      Website: "www.blacksabbath.com",
       Logo: "url.jpeg"
     }).then(function(results) {
       res.json(results)
