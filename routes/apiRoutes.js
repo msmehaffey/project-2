@@ -79,10 +79,10 @@ app.get("/events", function(req, res) {
 
 app.post("/api/newEvent", function(req, res) {
   db.Show.create({
-    Venue: "Hopdoddys",
-    Date: "12/27/2019",
-    Price: "15",
-    Facebook: "www.facebook.com/event",
+    Venue: req.body.venue,
+    Date: req.body.date,
+    Price: req.body.price,
+    Facebook: req.body.facebook,
     // ArtistId: "artistsId"
   }).then(function(results) {
     res.json(results)
