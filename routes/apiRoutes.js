@@ -72,51 +72,45 @@ app.get("/events", function(req, res) {
     var hbsObject = {
       event: results
     };
-    // console.log(results)
     res.render("events", hbsObject)
   });
 });
 
-app.get("/createEvent", function(req, res) {
-  db.Artist.findAll({}).then(function(results) {
-    var hbsObject = {
-      musician: results
-    };
-    res.render("createEvent", hbsObject)
-  });
-app.get("/eventsQuery", function(req, res) {
+// app.get("/createEvent", function(req, res) {
+//   db.Artist.findAll({}).then(function(results) {
+//     var hbsObject = {
+//       musician: results
+//     };
+//     res.render("createEvent", hbsObject)
+//   });
+
+  app.get("/eventsQuery", function(req, res) {
     db.Show.findAll({
       where: {
-        bandName: req.body.artistName
+        bandName: "Black Sabbath",
       }
     }).then(function(results) {
-      console.log("This is my band name: " + req.body.artistName)
-      // var hbsObject = {
-      //   event: results
-      // };
-      // console.log(results)
-      // res.render("events", hbsObject)
-      res.json(results)
+      console.log("This is my band name: " + req.body.artistName);
+      res.json(results);
     });
-});
-
-app.get("/eventsQuery", function(req, res) {
-  db.Show.findAll({
-    where: {
-      bandName: req.body.bandName 
-    },
-  }).then(function(results) {
-    var hbsObject = {
-      event: results
-    };
-    console.log(results)
-    res.render("events", hbsObject)
   });
-});
+
+// app.get("/eventsQuery", function(req, res) {
+//   db.Show.findAll({
+//     where: {
+//       bandName: req.body.bandName 
+//     },
+//   }).then(function(results) {
+//     var hbsObject = {
+//       event: results
+//     };
+//     console.log(results)
+//     res.render("events", hbsObject)
+//   });
+// });
 
 
 app.post("/api/newEvent", function(req, res) {
-  console.log(req.body)
   db.Show.create({
     bandName: req.body.bandName,
     Venue: req.body.venue,
@@ -153,9 +147,6 @@ app.post("/api/deleteEvent", function(req, res) {
   }).then(function(results) {
     res.redirect("/api/events")
   });
-});
-
-
 });
 
 
