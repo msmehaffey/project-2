@@ -9,6 +9,23 @@
         </div>
       </div>
          
+{{!-- <div>
+  {{#each show}}
+    <p> this.bandName </p>
+  {{/each}}
+</div> --}}
+
+    <form method="GET" action="/eventsQuery">
+            <p> Band Name </p>
+            <input type="text" name="bandName" style="width: 50%" placeholder="Type Band Name Here" value>
+            
+            <p> Venue</p>
+            <input type="text" name="venue" style="width: 50%" placeholder="Type Venue Name Here">
+
+            <button href="/eventsQuery" type="submit"> Submit </button>
+        </form>
+
+
     </nav>
     <div class="container">
     <table class="responsive-table striped center-align">
@@ -21,11 +38,13 @@
         </thead>
 
         <tbody>
-          <tr>
-            {{#each show}}
-              {{band/band-shows}}
+            {{#each event}}
+              <tr> 
+                <td> {{this.Venue}} </td>
+                <td> {{this.Date}} </td>
+                <td> {{this.Price}} </td>
+              </tr>
             {{/each}}
-          </tr>
         </tbody>
       </table>
       </div>

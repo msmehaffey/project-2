@@ -9,24 +9,24 @@ module.exports = function(app) {
       var hbsObject = {
         band: results
       };
-      console.log(results)
+      // console.log(results)
       res.render("index", hbsObject)
     });
   });
 
-  app.get("/artistsearch:id", function(req, res) {
-    db.Shows.findAll({
-      where: {
-        ArtistId: req.params.id
-      }
-    }).then(function(results) {
-      var showsObject = {
-        show: results
-      }
-      console.log(results)
-      res.render("events", showsObject)
-    })
-  });
+  // app.get("/artistsearch:id", function(req, res) {
+  //   db.Shows.findAll({
+  //     where: {
+  //       ArtistId: req.params.id
+  //     }
+  //   }).then(function(results) {
+  //     var showsObject = {
+  //       show: results
+  //     }
+  //     console.log(results)
+  //     res.render("events", showsObject)
+  //   })
+  // });
 
   app.post("/api/newArtist", function(req, res) {
     db.Artist.create({
@@ -72,19 +72,36 @@ app.get("/events", function(req, res) {
     var hbsObject = {
       event: results
     };
+    // console.log(results)
+    res.render("events", hbsObject)
+  });
+});
+
+app.get("/eventsQuery", function(req, res) {
+  db.Show.findAll({
+    where: {
+      bandName: req.body.bandName 
+    },
+  }).then(function(results) {
+    var hbsObject = {
+      event: results
+    };
     console.log(results)
     res.render("events", hbsObject)
   });
 });
 
+
 app.post("/api/newEvent", function(req, res) {
   db.Show.create({
+    bandName: req.body.bandName,
     Venue: req.body.venue,
     Date: req.body.date,
     Price: req.body.price,
     Facebook: req.body.facebook,
     // ArtistId: "artistsId"
   }).then(function(results) {
+    console.log(results)
     res.json(results)
   });
 });
