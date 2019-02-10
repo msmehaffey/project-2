@@ -87,11 +87,15 @@ app.get("/events", function(req, res) {
   app.get("/eventsQuery", function(req, res) {
     db.Show.findAll({
       where: {
-        bandName: "Black Sabbath",
+        bandName: req.query.artistName,
       }
     }).then(function(results) {
+      var hbsObject = {
+          event: results
+        };
       console.log("This is my band name: " + req.body.artistName);
-      res.json(results);
+      res.render("events", hbsObject)
+      // res.json(results);
     });
   });
 
