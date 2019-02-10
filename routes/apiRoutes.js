@@ -77,20 +77,20 @@ app.get("/events", function(req, res) {
   });
 });
 
-app.get("/eventsQuery/:bandName", function(req, res) {
-  if(req.params.bandName) {
+app.get("/eventsQuery", function(req, res) {
     db.Show.findAll({
       where: {
-        bandName: req.params.bandName 
+        bandName: req.body.artistName
       },
     }).then(function(results) {
-      var hbsObject = {
-        event: results
-      };
-      console.log(results)
-      res.render("events", hbsObject)
+      console.log("This is my band name: " + req.body)
+      // var hbsObject = {
+      //   event: results
+      // };
+      // console.log(results)
+      // res.render("events", hbsObject)
+      res.json(results)
     });
-  }
 });
 
 

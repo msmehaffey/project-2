@@ -52,25 +52,38 @@
       </nav> --}}
 
 
-    <div class="container">
 
-        <p> Search Your Artist Here </p>
-        <input id="bandSearched" placeholder="Type Artist Name">
-        <a id="searchQuery" href="/eventsQuery"><button type="submit">Submit</button></a>
+    {{!-- <div class="container">
+
+        
+
+
+        <form method="GET" action="/eventsQuery">
+            <p> Search Your Artist Here </p>
+            <input name="bandName" id="bandSearched" placeholder="Type Artist Name">
+            <a href="/eventsQuery"><button id="submit-btn" type="submit">Submit</button></a>
+        </form>
+
+
+
+
 
         <div id="listedEvents">
+
+
+
 
         </div>
 
     </div>
 
     <script>
-        $("#searchQuery").on("click", function(event) {
+        $("#submit-btn").on("click", function(event) {
             event.preventDefault();
 
-            var bandSearched = $("#bookSearched").val().trim();
+            var bandSearched = $("#bandSearched").val();
 
-            $.get("/eventsQuery/" + bookSearched, function(data) {
+            $.request.get("/eventsQuery", function(data) {
                 renderEvents(data);
             });
         });
@@ -83,13 +96,21 @@
                 for (var i = 0; i<data.length; i++) {
                     var div = $("<div>");
 
-                    div.append("<h2>" + data[i].Venue "</h2>");
-                    div.append("<p>" + data[i].Date "</p>");
-                    div.append("<p>" + data[i].Facebook "</p>");
+                    div.append("<h2>" + data[i].Venue + "</h2>");
+                    div.append("<p>" + data[i].Date + "</p>");
+                    div.append("<p>" + data[i].Facebook + "</p>");
 
-                    $("#listedEvents").append(div).
+                    $("#listedEvents").append(div);
                 }
             }
         }
+    </script> --}}
+<div class="container">
 
-    </script>
+    <form method="GET" action="/eventsQuery">
+            <p> Search Your Artist Here </p>
+            <input type="text" name="artistName" placeholder="Type Band Name Here">
+            <button href="/eventsQuery" type="submit">Submit</button></a>
+    </form>
+
+ </div>
