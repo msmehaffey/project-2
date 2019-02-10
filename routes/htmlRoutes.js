@@ -14,13 +14,16 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.render("index")
+    res.sendFile(path.join(__dirname, "../views/index.html"))
     // res.sendFile(path.join(__dirname, "../views/index.handlebars"));
   });
   // cms route loads cms.html
-  app.get("/events", function(req, res) {
-    res.render("events");
+  app.get("/eventsearch", function(req, res) {
+    res.sendFile(path.join(__dirname, "../main"));
   });
+  
+
+
 
   // // blog route loads blog.html
   // app.get("/blog", function(req, res) {

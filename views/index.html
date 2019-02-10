@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Local Clutch</title>
+</head>
+  
+ <style> 
+      nav {
+          background-color: #212121
+      }
+      .carousel-item img {
+        height: 200px;
+        width: 200px;
+      }
+      body {
+        background-color: #eeeeee
+      }
+  </style>
+  <script> 
+      $(document).ready(function() {
+        M.AutoInit();
+  
+    function getBands() {
+        $.get("/", function(data) {
+            console.log("Artists", data);
+            bands = data;
+        })
+
+    }
+  
+      var carouselSpan;
+      var carouselItem = $("<a>");
+        carouselItem.addClass("carousel-item");
+      var carouselImage = $("<img>");
+
+    })
+
+
+
+
+
+
+  </script>
+  <title> my test </title>
+
+</head>
+
+<body>
+        <nav>
+                <div class="container">
+                  <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo">Local Clutch</a>
+              
+                    <ul class="right hide-on-med-and-down">
+                      <i class="material-icons left">search</i>
+                      <li>
+                          <input id="eventDate" type="text" class="datepicker" placeholder="Search Event By Date">
+                      </li>
+                      <li><a class="modal-trigger" href="#modalLogin"><i class="material-icons right">lock</i> Login </a></li>
+                    </ul>
+                  </div>
+                </div>
+                   
+              </nav>
+    <div class="container" style="background-color:#eeeeee;margin-top:50px">
+    <div class="carousel">
+        
+    </div>
+
+    
+  <h6 class="center-align"> Browse Local Austin Artists to View Upcoming Events </h6>
+  
+</div>
+
+  <div id="modalLogin" class="modal">
+    <div class="modal-content">
+      <h4 style="color:black"> Login </h4>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="first_name" type="text" class="validate">
+              <label for="first_name"> Email </label>
+            </div>
+            <div class="input-field col s6">
+              <input id="password" type="password" class="validate">
+              <label for="password"> Password </label>
+            </div>
+            </div>
+      </div>
+        </form>
+    </div>
+
+
+    
+
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" style="color:black">Login</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" style="color:black">Cancel</a>
+    </div>
+  </div>
+</body>
+
+</html>
