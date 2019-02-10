@@ -72,7 +72,6 @@ app.get("/events", function(req, res) {
     var hbsObject = {
       event: results
     };
-    // console.log(results)
     res.render("events", hbsObject)
   });
 });
@@ -84,50 +83,51 @@ app.get("/createEvent", function(req, res) {
     };
     res.render("createEvent", hbsObject)
   });
-app.get("/eventsQuery", function(req, res) {
+
+  app.get("/eventsQuery", function(req, res) {
     db.Show.findAll({
       where: {
         bandName: req.body.artistName
       },
     }).then(function(results) {
       console.log("This is my band name: " + req.body)
-      // var hbsObject = {
-      //   event: results
-      // };
-      // console.log(results)
-      // res.render("events", hbsObject)
+      var hbsObject = {
+        event: results
+      };
+      console.log(results)
+      res.render("events", hbsObject)
       res.json(results)
     });
 });
 
-// app.get("/eventsQuery", function(req, res) {
-//   db.Show.findAll({
-//     where: {
-//       bandName: req.body.bandName 
-//     },
-//   }).then(function(results) {
-//     var hbsObject = {
-//       event: results
-//     };
-//     console.log(results)
-//     res.render("events", hbsObject)
-//   });
-// });
+app.get("/eventsQuery", function(req, res) {
+  db.Show.findAll({
+    where: {
+      bandName: req.body.bandName 
+    },
+  }).then(function(results) {
+    var hbsObject = {
+      event: results
+    };
+    console.log(results)
+    res.render("events", hbsObject)
+  });
+});
 
 
 app.post("/api/newEvent", function(req, res) {
   console.log(req.body)
-  // db.Show.create({
-  //   bandName: req.body.bandName,
-  //   Venue: req.body.venue,
-  //   Date: req.body.date,
-  //   Price: req.body.price,
-  //   Facebook: req.body.facebook,
-  //   // ArtistId: "artistsId"
-  // }).then(function(results) {
-  //   console.log(results)
-  //   res.json(results)
-  // });
+  db.Show.create({
+    bandName: req.body.bandName,
+    Venue: req.body.venue,
+    Date: req.body.date,
+    Price: req.body.price,
+    Facebook: req.body.facebook,
+    ArtistId: "artistsId"
+  }).then(function(results) {
+    console.log(results)
+    res.json(results)
+  });
 });
 
 app.post("/api/updateEvent", function(req, res) {
@@ -156,6 +156,7 @@ app.post("/api/deleteEvent", function(req, res) {
 });
 
 
-};
 
+});
+}
 
