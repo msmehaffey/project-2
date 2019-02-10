@@ -22,7 +22,7 @@ module.exports = function(app) {
     res.render("events");
   });
 
-  app.get("/createEvents", function(req, res) {
+  app.get("/createEvent", function(req, res) {
     res.render("createEvent");
   });
 
