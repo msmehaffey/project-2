@@ -1,4 +1,4 @@
-<nav>
+{{!-- <nav>
       <div class="container">
         <div class="nav-wrapper">
           <a href="#!" class="brand-logo">Local Clutch</a>
@@ -9,13 +9,13 @@
         </div>
       </div>
          
-{{!-- <div>
+<div>
   {{#each show}}
     <p> this.bandName </p>
   {{/each}}
-</div> --}}
+</div>
 
-    {{!-- <form method="GET" action="/eventsQuery">
+    <form method="GET" action="/eventsQuery">
             <p> Band Name </p>
             <input type="text" name="bandName" style="width: 50%" placeholder="Type Band Name Here" value>
             
@@ -23,7 +23,7 @@
             <input type="text" name="venue" style="width: 50%" placeholder="Type Venue Name Here">
 
             <button href="/eventsQuery" type="submit"> Submit </button>
-        </form> --}}
+        </form>
 
 
     </nav>
@@ -48,3 +48,48 @@
         </tbody>
       </table>
       </div>
+
+      </nav> --}}
+
+
+    <div class="container">
+
+        <p> Search Your Artist Here </p>
+        <input id="bandSearched" placeholder="Type Artist Name">
+        <a id="searchQuery" href="/eventsQuery"><button type="submit">Submit</button></a>
+
+        <div id="listedEvents">
+
+        </div>
+
+    </div>
+
+    <script>
+        $("#searchQuery").on("click", function(event) {
+            event.preventDefault();
+
+            var bandSearched = $("#bookSearched").val().trim();
+
+            $.get("/eventsQuery/" + bookSearched, function(data) {
+                renderEvents(data);
+            });
+        });
+
+        function renderEvents(data) {
+            if (data.length !== 0) {
+                $("#listedEvents").empty();
+                $("#listedEvents").show();
+
+                for (var i = 0; i<data.length; i++) {
+                    var div = $("<div>");
+
+                    div.append("<h2>" + data[i].Venue "</h2>");
+                    div.append("<p>" + data[i].Date "</p>");
+                    div.append("<p>" + data[i].Facebook "</p>");
+
+                    $("#listedEvents").append(div).
+                }
+            }
+        }
+
+    </script>
