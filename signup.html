@@ -1,0 +1,42 @@
+<!DOCTYPE html>  
+   <meta charset="UTF-8">  
+ </head>  
+ <!-- Below is the initialization snippet for my Firebase project. It will vary for each project -->  
+ <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>  
+ <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBIHZVBLXZpIGE5z6GOYsh_kvZ09p-mSYM",
+      authDomain: "amourdevvida.firebaseapp.com",
+      databaseURL: "https://amourdevvida.firebaseio.com",
+      projectId: "amourdevvida",
+      storageBucket: "amourdevvida.appspot.com",
+      messagingSenderId: "955281694940"
+    };
+    firebase.initializeApp(config);
+  </script>  
+ <!-- The code below initializes the sign-in widget from FirebaseUI web. -->  
+ <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>  
+   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />  
+   <script type="text/javascript">  
+    var uiConfig = {  
+     signInSuccessUrl: "user ",  
+     signInOptions: [  
+      // Specify providers you want to offer your users.    
+      firebase.auth.EmailAuthProvider.PROVIDER_ID  
+     ],  
+     // Terms of service url can be specified and will show up in the widget.  
+     tosUrl: '<your-tos-url>'  
+    };  
+    // Initialize the FirebaseUI Widget using Firebase.  
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());  
+    // The start method will wait until the DOM is loaded.  
+    ui.start('#firebaseui-auth-container', uiConfig);  
+ </script>  
+ <!-- Include a simple background image & and title -->  
+  <div></div>  
+  <body>  
+       <h1 text-align="center" style="color:white;">Firebase Auth Quickstart Demo</h1>  
+        <div id="firebaseui-auth-container"></div>  
+  </body>  
+ </html>  

@@ -26,6 +26,10 @@ module.exports = function(app) {
     res.render("createEvent");
   });
 
+  app.get("/signup", function(req, res) {
+    res.sendFile(path.join(__dirname, "../signup.html"));
+  })
+
   // // blog route loads blog.html
   // app.get("/blog", function(req, res) {
   //   res.sendFile(path.join(__dirname, "../public/blog.html"));

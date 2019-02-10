@@ -4,11 +4,9 @@
           <a href="#!" class="brand-logo">Local Clutch</a>
     
           <ul class="right hide-on-med-and-down">
-            <i class="material-icons left">search</i>
-            <li>
-                <input id="eventDate" type="text" class="datepicker" placeholder="Search Event By Date">
-            </li>
+            <li><a href="/createEvent"><i class="material-icons right">create</i> Create Event </a></li>
             <li><a class="modal-trigger" href="#modalLogin"><i class="material-icons right">lock</i> Login </a></li>
+            <li><a class="modal-trigger" href="/signup"><i class="material-icons right">lock</i> sign up </a></li>
           </ul>
         </div>
       </div>
@@ -21,8 +19,6 @@
               {{>bands/band-logos}}
             {{/each}}
         </div>
-
-<a href="/createEvent"><button> Click to Create Event </button></a>
         
         <h6 class="center-align"> Browse Local Austin Artists to View Upcoming Events </h6>
       
@@ -55,3 +51,4 @@
           <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" style="color:black">Cancel</a>
         </div>
       </div>
+
