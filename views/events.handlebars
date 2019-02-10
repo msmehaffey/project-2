@@ -4,7 +4,8 @@
           <a href="#!" class="brand-logo">Local Clutch</a>
     
           <ul class="right hide-on-med-and-down">
-            <li><a class="modal-trigger" href="index.html"><i class="material-icons right">home</i> Home </a></li>
+            <li><a class="modal-trigger" href="/"><i class="material-icons right">home</i> Home </a></li>
+            <li><a class='dropdown-trigger' href='#' data-target='dropdown1'> Filter Events By Artist </a></li>
           </ul>
         </div>
       </div>
@@ -39,12 +40,15 @@
 
         <tbody>
             {{#each event}}
-              <tr> 
-                <td> {{this.Venue}} </td>
-                <td> {{this.Date}} </td>
-                <td> {{this.Price}} </td>
-              </tr>
+              {{>bands/band-shows}}
             {{/each}}
         </tbody>
       </table>
+
+  <ul id='dropdown1' class='dropdown-content' style="color:black">
+    {{#each event}}
+      {{>bands/band-names}}
+    {{/each}}
+  </ul>
+        
       </div>

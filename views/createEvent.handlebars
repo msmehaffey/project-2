@@ -1,5 +1,16 @@
 <nav>
       <div class="container">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Local Clutch</a>
+    
+          <ul class="right hide-on-med-and-down">
+            <li><a class="modal-trigger" href="/"><i class="material-icons right">home</i> Home </a></li>
+          </ul>
+        </div>
+      </div>
+         
+  </nav>
+      <div class="container">
         
         <form method="POST" action="/api/newEvent">
             <p> Band Name </p>
@@ -17,14 +28,9 @@
             <p> Facebook Event </p>
             <input type="text" name="facebook" style="width: 50%" placeholder="Paste Facebook Event Here">
 
-            <button href="/api/newEvent" type="submit"> Submit </button>
+            
         </form>
+        <button href="/api/newEvent" type="submit"> Submit </button>
 
-
-        
-
-        <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" style="color:black">Login</a>
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" style="color:black">Cancel</a>
         </div>
-      </div>
+      
