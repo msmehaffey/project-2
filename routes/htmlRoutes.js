@@ -29,6 +29,9 @@ module.exports = function(app) {
   app.get("/signup", function(req, res) {
     res.sendFile(path.join(__dirname, "../signup.html"));
   })
+  app.get("/searchEvents", function(req, res) {
+    res.render("searchEvents");
+  });
 
   // // blog route loads blog.html
   // app.get("/blog", function(req, res) {

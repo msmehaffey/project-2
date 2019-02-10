@@ -84,6 +84,20 @@ app.get("/createEvent", function(req, res) {
     };
     res.render("createEvent", hbsObject)
   });
+app.get("/eventsQuery", function(req, res) {
+    db.Show.findAll({
+      where: {
+        bandName: req.body.artistName
+      },
+    }).then(function(results) {
+      console.log("This is my band name: " + req.body)
+      // var hbsObject = {
+      //   event: results
+      // };
+      // console.log(results)
+      // res.render("events", hbsObject)
+      res.json(results)
+    });
 });
 
 // app.get("/eventsQuery", function(req, res) {
