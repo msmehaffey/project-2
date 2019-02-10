@@ -81,9 +81,9 @@ app.get("/eventsQuery", function(req, res) {
     db.Show.findAll({
       where: {
         bandName: req.body.artistName
-      },
+      }
     }).then(function(results) {
-      console.log("This is my band name: " + req.body)
+      console.log("This is my band name: " + req.body.artistName)
       // var hbsObject = {
       //   event: results
       // };
