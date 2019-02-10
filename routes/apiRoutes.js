@@ -116,11 +116,17 @@ app.get("/events", function(req, res) {
 
 app.post("/api/newEvent", function(req, res) {
   db.Show.create({
-    bandName: req.body.bandName,
-    Venue: req.body.venue,
-    Date: req.body.date,
-    Price: req.body.price,
-    Facebook: req.body.facebook,
+    bandName: "Black Sabbath",
+    Venue: "Stubbs",
+    Date: "12/27/1992",
+    Time: "7:00",
+    Price: "15",
+    Facebook: "www.facebook.com/events",
+    // bandName: req.body.bandName,
+    // Venue: req.body.venue,
+    // Date: req.body.date,
+    // Price: req.body.price,
+    // Facebook: req.body.facebook,
     // ArtistId: "artistsId"
   }).then(function(results) {
     console.log(results)
