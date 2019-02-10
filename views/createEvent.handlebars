@@ -46,15 +46,3 @@
         <button id="newEventButton" type="submit"> Submit </button>
 
         </div>
-
-        <script>
-          $("newEventButton").on("click", function(event) {
-            event.preventDefault();
-            var newEvent = {
-              venue: $("#eventVenue").val().trim()
-            }
-            console.log(newEvent)
-          })
-
-      
-        </script>
