@@ -1,0 +1,40 @@
+<nav>
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Local Clutch</a>
+    
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/"><i class="material-icons right">home</i> Home </a></li>
+            <li><a href="/createEvent"><i class="material-icons right">calendar_today</i> Create Event </a></li>
+          </ul>
+        </div>
+      </div>
+         
+  </nav> 
+
+
+      <h3 class="center-align"> Create A New Artist </h3>
+      <h6 class="center-align">If you've already created an artist please continue on to the create an event page.</h6>
+      <div class="container" style="margin-bottom: 10%">
+        
+        <form method="POST" action="/api/newEvent" style="margin-bottom:10px">
+            <p> Band/Stage Name </p>
+             <input type="text" name="artist" id="artist" style="width: 50%" placeholder="Type Your Name Here">
+            
+            <p> Genre </p>
+            <input type="text" name="genre" id="artistGenre" style="width: 50%" placeholder="Type your Most Played Genre">
+
+            <p> Website or Social Media </p>
+            <input type="text" name="website" style="width: 50%" placeholder="URL Please">
+
+            <p> Logo </p>
+            <input type="text" name="logo" style="width: 50%" placeholder="Image Address Please">
+
+            <p> Ticket Price </p>
+            <input type="text" name="price" style="width: 50%" placeholder="Type Ticket Price Here">
+
+  
+        </form>
+        <button id="newArtistButton" type="submit"> Submit </button>
+
+        </div>
