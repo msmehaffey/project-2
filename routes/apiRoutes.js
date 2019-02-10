@@ -72,7 +72,6 @@ app.get("/events", function(req, res) {
     var hbsObject = {
       event: results
     };
-    console.log(results)
     res.render("events", hbsObject)
   });
 });
