@@ -78,17 +78,19 @@ app.get("/events", function(req, res) {
 });
 
 app.get("/eventsQuery", function(req, res) {
-  db.Show.findAll({
-    where: {
-      bandName: req.body.bandName 
-    },
-  }).then(function(results) {
-    var hbsObject = {
-      event: results
-    };
-    console.log(results)
-    res.render("events", hbsObject)
-  });
+    db.Show.findAll({
+      where: {
+        bandName: req.body.artistName
+      },
+    }).then(function(results) {
+      console.log("This is my band name: " + req.body)
+      // var hbsObject = {
+      //   event: results
+      // };
+      // console.log(results)
+      // res.render("events", hbsObject)
+      res.json(results)
+    });
 });
 
 
