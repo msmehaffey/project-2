@@ -116,7 +116,7 @@ app.get("/events", function(req, res) {
 
 app.post("/api/newEvent", function(req, res) {
   db.Show.create({
-    bandName: req.body.bandName,
+    bandName: req.body.artistName,
     Venue: req.body.venue,
     Date: req.body.date,
     Price: req.body.price,
