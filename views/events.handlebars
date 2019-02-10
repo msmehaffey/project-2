@@ -29,6 +29,17 @@
 
     </nav>
     <div class="container">
+
+<div class="container">
+
+    <form method="GET" action="/eventsQuery">
+            <p> Search Your Artist Here </p>
+            <input type="text" name="artistName" placeholder="Type Band Name Here">
+            <button href="/eventsQuery" type="submit"> Submit </button>
+    </form>
+
+ </div>
+
     <table class="responsive-table striped center-align">
         <thead>
           <tr>
@@ -52,4 +63,4 @@
     {{/each}}
   </ul>
         
-      </div>
+</div>

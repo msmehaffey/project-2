@@ -12,11 +12,17 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     bandName: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
   },
 
     Date: {
         type: DataTypes.STRING
+    },
+
+    Time: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
 
     Price: {
