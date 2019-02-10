@@ -7,7 +7,7 @@ var connection = conn.connection();
 
 var data;
 
-connection.query('SELECT * FROM artistsdb.artist', function (err, rows) {
+connection.query('SELECT * FROM artistsdb.products', function (err, rows) {
     if (err) throw err;
     data = rows;
 });
@@ -24,7 +24,7 @@ router.get('/', function (req, res) {
     var cart = req.session.cart;
     if (cart) {
         var ids = Object.keys(cart);
-        connection.query('SELECT * FROM artistsdb.artist WHERE id IN (' + ids + ')', function (err, rows) {
+        connection.query('SELECT * FROM artistsdb.products WHERE id IN (' + ids + ')', function (err, rows) {
             if (err) throw err;
             cart_data = rows;
             res.render('checkout', {title: 'Shopping Cart', data: data, currency: 'Rs. ', cart_data: rows, cart: cart});
