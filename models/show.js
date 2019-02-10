@@ -26,10 +26,6 @@ module.exports = (sequelize, DataTypes) => {
 
     Facebook: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
     },
   });
 
