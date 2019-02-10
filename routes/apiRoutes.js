@@ -18,7 +18,7 @@ module.exports = function(app) {
   //   db.Shows.findAll({
   //     where: {
   //       ArtistId: req.params.id
-  //     }
+  //     } 
   //   }).then(function(results) {
   //     var showsObject = {
   //       show: results
@@ -77,6 +77,13 @@ app.get("/events", function(req, res) {
   });
 });
 
+app.get("/createEvent", function(req, res) {
+  db.Artist.findAll({}).then(function(results) {
+    var hbsObject = {
+      musician: results
+    };
+    res.render("createEvent", hbsObject)
+  });
 app.get("/eventsQuery", function(req, res) {
     db.Show.findAll({
       where: {
@@ -93,8 +100,23 @@ app.get("/eventsQuery", function(req, res) {
     });
 });
 
+app.get("/eventsQuery", function(req, res) {
+  db.Show.findAll({
+    where: {
+      bandName: req.body.bandName 
+    },
+  }).then(function(results) {
+    var hbsObject = {
+      event: results
+    };
+    console.log(results)
+    res.render("events", hbsObject)
+  });
+});
+
 
 app.post("/api/newEvent", function(req, res) {
+  console.log(req.body)
   db.Show.create({
     bandName: req.body.bandName,
     Venue: req.body.venue,
@@ -134,8 +156,7 @@ app.post("/api/deleteEvent", function(req, res) {
 });
 
 
+});
 
 
-};
-
-
+}

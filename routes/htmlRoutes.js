@@ -26,6 +26,9 @@ module.exports = function(app) {
     res.render("createEvent");
   });
 
+  app.get("/signup", function(req, res) {
+    res.sendFile(path.join(__dirname, "../signup.html"));
+  })
   app.get("/searchEvents", function(req, res) {
     res.render("searchEvents");
   });
