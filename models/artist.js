@@ -22,7 +22,10 @@ module.exports = (sequelize, DataTypes) => {
 
     Logo: {
       type: DataTypes.STRING,
-      allowNull: false,
+    },
+
+    fbaseid: {
+      type: DataTypes.STRING
     }
 
   });
