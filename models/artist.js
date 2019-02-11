@@ -18,9 +18,6 @@ module.exports = (sequelize, DataTypes) => {
     Website: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
     },
 
     Logo: {

@@ -30,10 +30,10 @@ module.exports = function(app) {
 
   app.post("/api/newArtist", function(req, res) {
     db.Artist.create({
-      Artist: "Black Sabbath",
-      Genre: "rock",
-      Website: "www.blacksabbath.com",
-      Logo: "url.jpeg"
+      Artist: req.body.artist,
+      Genre: req.body.genre,
+      Website: req.body.website,
+      Logo: req.body.logo
     }).then(function(results) {
       res.json(results)
     });

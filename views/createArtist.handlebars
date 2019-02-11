@@ -17,7 +17,7 @@
       <h6 class="center-align">If you've already created an artist please continue on to the create an event page.</h6>
       <div class="container" style="margin-bottom: 10%">
         
-        <form method="POST" action="/api/newEvent" style="margin-bottom:10px">
+        <form method="POST" action="/api/newArtist" style="margin-bottom:10px">
             <p> Band/Stage Name </p>
              <input type="text" name="artist" id="artist" style="width: 50%" placeholder="Type Your Name Here">
             
@@ -30,11 +30,11 @@
             <p> Logo </p>
             <input type="text" name="logo" style="width: 50%" placeholder="Image Address Please">
 
-            <p> Ticket Price </p>
-            <input type="text" name="price" style="width: 50%" placeholder="Type Ticket Price Here">
-
+            {{!-- <p> Ticket Price </p>
+            <input type="text" name="price" style="width: 50%" placeholder="Type Ticket Price Here"> --}}
+            <button href="/api/newArtist" id="newArtistButton" type="submit"> Submit </button>
   
         </form>
-        <button id="newArtistButton" type="submit"> Submit </button>
+        
 
         </div>

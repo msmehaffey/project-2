@@ -29,7 +29,7 @@
     $.ajax("/checkaccount" + user.uid, {
       type: "GET",
     }).then(function(result) {
-        if (result) {
+        if (!result) {
             window.location.href = "/createEvent"
         } else {
             window.location.href = "/createArtist"
