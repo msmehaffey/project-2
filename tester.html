@@ -1,0 +1,52 @@
+<!DOCTYPE html>  
+ <html lang="en">  
+ <head>  
+   <title>EasyAuth</title>  
+   <meta charset="UTF-8">  
+ </head>  
+ <!-- Below is the initialization snippet for my Firebase project. It will vary for each project -->  
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>  
+ <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>  
+ <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBIHZVBLXZpIGE5z6GOYsh_kvZ09p-mSYM",
+      authDomain: "amourdevvida.firebaseapp.com",
+      databaseURL: "https://amourdevvida.firebaseio.com",
+      projectId: "amourdevvida",
+      storageBucket: "amourdevvida.appspot.com",
+      messagingSenderId: "955281694940"
+    };
+    firebase.initializeApp(config);  
+ </script>  
+ <body>  
+ <!-- A simple example script to add text to the page that displays the user's Display Name and Email -->  
+ <script>  
+ // Track the UID of the current user.  
+ var currentUid = null;  
+ firebase.auth().onAuthStateChanged(function(user) {  
+    $.ajax("/checkaccount" + user.uid, {
+      type: "GET",
+    }).then(function(result) {
+        if (result) {
+            window.location.href = "/createEvent"
+        } else {
+            window.location.href = "/createArtist"
+        }
+    });
+//   if (user && user.uid != currentUid) {  
+//    // Update the UI when a new user signs in.  
+//    // Otherwise ignore if this is a token refresh.  
+//    // Update the current user UID.  
+//    currentUid = user.uid;  
+//    document.body.innerHTML = '<h1> Congrats ' + user.displayName + ', you are done! </h1> <h2> Now get back to what you love building. </h2> <h2> Need to verify your email address or reset your password? Firebase can handle all of that for you using the email you provided: ' + user.email + '. <h/2>';  
+//   } else {  
+//    // Sign out operation. Reset the current user UID.  
+//    currentUid = null;  
+//    console.log("no user signed in");  
+//   }  
+ });  
+ </script>  
+ 
+ </html>
