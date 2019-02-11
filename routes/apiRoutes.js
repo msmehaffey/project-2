@@ -30,10 +30,10 @@ module.exports = function(app) {
 
   app.post("/api/newArtist", function(req, res) {
     db.Artist.create({
-      Artist: "Black Sabbath",
-      Genre: "rock",
-      Website: "www.blacksabbath.com",
-      Logo: "url.jpeg"
+      Artist: req.body.artist,
+      Genre: req.body.genre,
+      Website: req.body.website,
+      Logo: req.body.logo
     }).then(function(results) {
       res.json(results)
     });
@@ -116,17 +116,11 @@ app.get("/events", function(req, res) {
 
 app.post("/api/newEvent", function(req, res) {
   db.Show.create({
-    bandName: "Black Sabbath",
-    Venue: "Stubbs",
-    Date: "12/27/1992",
-    Time: "7:00",
-    Price: "15",
-    Facebook: "www.facebook.com/events",
-    // bandName: req.body.bandName,
-    // Venue: req.body.venue,
-    // Date: req.body.date,
-    // Price: req.body.price,
-    // Facebook: req.body.facebook,
+    bandName: req.body.artistName,
+    Venue: req.body.venue,
+    Date: req.body.date,
+    Price: req.body.price,
+    Facebook: req.body.facebook,
     // ArtistId: "artistsId"
   }).then(function(results) {
     console.log(results)
