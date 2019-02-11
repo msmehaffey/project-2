@@ -37,6 +37,10 @@ module.exports = function(app) {
     res.render("searchEvents");
   });
 
+  app.get("/tester", function(req, res) {
+    res.sendFile(path.join(__dirname, "../tester.html"));
+  });
+
   // // blog route loads blog.html
   // app.get("/blog", function(req, res) {
   //   res.sendFile(path.join(__dirname, "../public/blog.html"));

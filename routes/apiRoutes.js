@@ -76,13 +76,14 @@ app.get("/events", function(req, res) {
   });
 });
 
-// app.get("/createEvent", function(req, res) {
-//   db.Artist.findAll({}).then(function(results) {
-//     var hbsObject = {
-//       musician: results
-//     };
-//     res.render("createEvent", hbsObject)
-//   });
+app.get("/createEvent", function(req, res) {
+  db.Artist.findAll({}).then(function(results) {
+    var hbsObject = {
+      musician: results
+    };
+    res.render("createEvent", hbsObject)
+  });
+  });
 
   app.get("/eventsQuery", function(req, res) {
     db.Show.findAll({
@@ -150,6 +151,29 @@ app.post("/api/deleteEvent", function(req, res) {
     }
   }).then(function(results) {
     res.redirect("/api/events")
+  });
+});
+
+app.get("/checkaccount:id", function(req, res) {
+  db.Artist.findAll({
+    where: {
+      fbaseid: req.params.id
+    }
+  }).then(function(data) {
+    var id = {
+      idparameter: req.params.id
+    }
+      if (data.length === 0) {
+        console.log(id)
+
+        res.render("createArtist", id)
+        console.log(id)
+
+      } else {
+        console.log(id)
+
+        res.render("createEvent", id)
+      }
   });
 });
 
