@@ -17,32 +17,29 @@
         
         <form method="POST" action="/api/newEvent" style="margin-bottom:10px">
             <p> Band Name </p>
-              <div class="input-field col s6 browser-default" style="width:50%">
-              <select>
-                <option value="" disabled selected> Select the Band Name</option>
-                {{#each musician}}
-                  {{>bands/artist-names}}
-                {{/each}}
-              </select>
-              </div>
-            
+            <input type="text" name="artistName" id="artistName" style="width: 50%" placeholder="Type Band Name Here">
+
             <p> Venue To Play at </p>
             <input type="text" name="venue" id="eventVenue" style="width: 50%" placeholder="Type Venue Name Here">
 
+            <p> Genre </p>
+            <input type="text" name="genre" id="eventVenue" style="width: 50%" placeholder="Type Genre Here">
+
             <p> Date of Event </p>
-            <input type="text" class="datepicker" style="width: 50%" placeholder="Select the Date of Event">
+            <input type="text" name="date" class="datepicker" style="width: 50%" placeholder="Select the Date of Event">
 
             <p> Time of Event </p>
-            <input type="text" class="timepicker" style="width: 50%" placeholder="Select the Time of Event">
+            <input type="text" name="time" class="timepicker" style="width: 50%" placeholder="Select the Time of Event">
 
             <p> Ticket Price </p>
             <input type="text" name="price" style="width: 50%" placeholder="Type Ticket Price Here">
 
             <p> Facebook Event </p>
             <input type="text" name="facebook" style="width: 50%" placeholder="Paste Facebook Event Here">
-
-  
+            <br/>
+            <button href="/api/newEvent" id="newEventButton" type="submit"> Submit </button>  
         </form>
-        <button id="newEventButton" type="submit"> Submit </button>
+
+      
 
         </div>

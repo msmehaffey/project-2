@@ -33,10 +33,13 @@
 <div class="container">
 
     <form method="GET" action="/eventsQuery">
-            <p> Search Your Artist Here </p>
+            <h3> Filter By Artist Here </h3>
             <input type="text" name="artistName" placeholder="Type Band Name Here">
+            
+            <br/>
             <button href="/eventsQuery" type="submit"> Submit </button>
     </form>
+<br>
 
  </div>
 
@@ -44,6 +47,7 @@
         <thead>
           <tr>
               <th> Band Name </th>
+              <th> Genre </th>
               <th> Venue </th>
               <th> Date </th>
               <th> Time </th>

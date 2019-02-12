@@ -89,7 +89,7 @@ app.get("/createEvent", function(req, res) {
     db.Show.findAll({
       where: {
         bandName: req.query.artistName,
-      }
+      },
     }).then(function(results) {
       var hbsObject = {
           event: results
@@ -119,13 +119,15 @@ app.post("/api/newEvent", function(req, res) {
   db.Show.create({
     bandName: req.body.artistName,
     Venue: req.body.venue,
+    Genre: req.body.genre,
     Date: req.body.date,
+    Time: req.body.time,
     Price: req.body.price,
     Facebook: req.body.facebook,
     // ArtistId: "artistsId"
   }).then(function(results) {
     console.log(results)
-    res.json(results)
+    res.redirect("/events")
   });
 });
 
