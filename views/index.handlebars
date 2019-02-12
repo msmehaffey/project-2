@@ -1,11 +1,11 @@
 <nav>
       <div class="container">
         <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">Local Clutch</a>
+          <a href="/" class="brand-logo">Local Clutch</a>
     
           <ul class="right hide-on-med-and-down">
-            <li><a href="/signup"><i class="material-icons right">lock</i> Login </a></li>
-            <li><a href="/signup"><i class="material-icons right">lock</i> Sign Up </a></li>
+            <li><a href="/createEvent"><i class="material-icons right">lock</i> Create Event </a></li>
+            <li><a href="/events"><i class="material-icons right">lock</i> Browse Events </a></li>
           </ul>
         </div>
       </div>
@@ -14,9 +14,17 @@
 
     <div class="container" style="background-color:#eeeeee;margin-top:50px"></div>
         <div class="carousel">
-            {{#each band}}
+            <a class="carousel-item" href="/events"><img src="https://images.unsplash.com/photo-1521337581100-8ca9a73a5f79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"></a>
+            <a class="carousel-item" href="/events"><img src="https://images.unsplash.com/photo-1518552832612-9d6e5ecd95d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"></a>
+            <a class="carousel-item" href="/events"><img src="https://images.unsplash.com/photo-1515210986222-9a86ccb8f4a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"></a>
+            <a class="carousel-item" href="/events"><img src="https://images.unsplash.com/photo-1512140528825-526de61a5bcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"></a>
+            <a class="carousel-item" href="/events"><img src="https://images.unsplash.com/photo-1514088939728-eced9016166a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"></a>
+            <a class="carousel-item" href="/events"><img src="https://images.unsplash.com/photo-1501285404133-0e100a37c3d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"></a>
+            
+            
+            {{!-- {{#each band}}
               {{>bands/band-logos}}
-            {{/each}}
+            {{/each}} --}}
         </div>
     </div>
         

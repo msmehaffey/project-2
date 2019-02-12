@@ -100,6 +100,21 @@ app.get("/createEvent", function(req, res) {
     });
   });
 
+  app.get("/genreQuery", function(req, res) {
+    db.Show.findAll({
+      where: {
+        Genre: req.query.genre,
+      },
+    }).then(function(results) {
+      var hbsObject = {
+          event: results
+        };
+      console.log("This is my band name: " + req.body.artistName);
+      res.render("genreSearch", hbsObject)
+      // res.json(results);
+    });
+  });
+
 // app.get("/eventsQuery", function(req, res) {
 //   db.Show.findAll({
 //     where: {

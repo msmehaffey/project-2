@@ -22,6 +22,10 @@ module.exports = function(app) {
     res.render("events");
   });
 
+  app.get("/genreSearch", function(req, res) {
+    res.render("genreSearch");
+  });
+
   app.get("/createEvent", function(req, res) {
     res.render("createEvent");
   });
