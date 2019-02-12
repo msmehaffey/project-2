@@ -6,7 +6,7 @@
           <ul class="right hide-on-med-and-down">
             <li><a class="modal-trigger" href="/"><i class="material-icons right">home</i> Home </a></li>
             <li><a href="/createEvent"><i class="material-icons right">lock</i> Create Event </a></li>
-            <li><a class='modal-trigger' href="/genreSearch"> Search By Genre </a></li>
+            <li><a class="modal-trigger" href='/events'> Search By Artist </a></li>
           </ul>
         </div>
       </div>
@@ -33,12 +33,12 @@
 
 <div class="container">
 
-    <form method="GET" action="/eventsQuery">
-            <h3> Search By Artist Here </h3>
-            <input type="text" name="artistName" placeholder="Type Band Name Here">
+    <form method="GET" action="/genreQuery">
+            <h3> Search By Genre Here </h3>
+            <input type="text" name="genre" placeholder="Type Genre Here">
             
             <br/>
-            <button href="/eventsQuery" type="submit"> Submit </button>
+            <button href="/genreQuery" type="submit"> Submit </button>
     </form>
 <br>
 
