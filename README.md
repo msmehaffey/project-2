@@ -14,25 +14,25 @@ From the home page as an Artist looking to post your show:
 * Then fill in all of the fields for your event to the best of your ability. 
 * Click submit.
 
-###Technologies Used
+### Technologies Used
 * [Materialize (CSS Framework)](https://materializecss.com/)
 * [Handlebars](https://handlebarsjs.com/)
 * [Nodejs](https://nodejs.org/en/)
 * [Heroku](https://www.heroku.com/)
 * [Expressjs](https://expressjs.com/)
 
-###MVP
+### MVP
 Allow Artists to post local show information for upcoming events
 Allow users to browse local events and view basic information about upcoming events
 Give users abaility to search upcoming events by Artist/Genre
 
-###Future Developements
+### Future Developements
 * Create a login function for both users and musicians
 * Upate events as their date expires
 * Only allow artists to create events when logged in and only can create events tied to their profile
 * Shopping cart functionality that allows users to purchase tickets directly from app if available
 
-###Authors
+### Authors
 * [Shuler MeHaffey](https://github.com/msmehaffey)
 * [Joe Pappano](https://github.com/JoePappano)
 * [Alfredo Rojas](https://github.com/bcihaveto)
